@@ -25,5 +25,5 @@ backstage:
         value: "0"
   ingress:
     enabled: true
-    className: ""
+    className: nginx
     host: "backstage.74.220.21.243.nip.io"

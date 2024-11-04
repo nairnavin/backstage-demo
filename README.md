@@ -56,7 +56,6 @@ Before you start the workshop, make sure you have the following tools installed 
 
 | Name       | Required | More info                                                  |
 |------------|----------|------------------------------------------------------------|
-| civo CLI   | No       | https://github.com/civo/cli\                               |
 | Pulumi CLI | Yes      | https://www.pulumi.com/docs/iac/download-install/\         |
 | gitHub CLI | Yes      | https://cli.github.com/                                    |
 | yq         | Yes      | https://github.com/mikefarah/yq#install                    |
@@ -70,15 +69,14 @@ Before you start the workshop, make sure you have the following tools installed 
 As part of the Pulumi CLI installation, you will need to create a free Pulumi account to host your state files. Please
 head over to [Pulumi](https://app.pulumi.com/signup) and create your free personal account.
 
-### Civo Account (Optional)
+### DigitalOcean Account (Optional)
 
-We will be using [Civo](https://www.civo.com/) as our Kubernetes provider. If you want you can create
-a [Civo account](https://dashboard.civo.com/signup) with a free $250 credit to use for the workshop.
+We will be using [DigitalOcean](https://digitalOcean.com/) as our Kubernetes provider. 
 
 Otherwise, we will provider you an API key to use for the workshop, this will be provided during the workshop.
 
 > **Note**: After the workshop, we will delete all the resources created during the workshop to avoid any charges. If
-> you want to keep the resources please use your own Civo account.
+> you want to keep the resources please use your own DigitalOcean account.
 
 ## Workshop
 
@@ -87,7 +85,7 @@ desired result. The steps are as follows:
 
 ### Create Cluster
 
-Here we will create a Kubernetes cluster using Civo. Don't worry, we will provide you with an API key to use for the
+Here we will create a Kubernetes cluster using DigitalOcean. Don't worry, we will provide you with an API key to use for the
 workshop.
 
 Run this command and follow the instructions inside the terminal:

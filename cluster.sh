@@ -5,10 +5,10 @@ set -e
 rm -f .env
 
 gum style  --foreground 212 --border-foreground 212 --border normal --margin "1 2" --padding "1 2" \
-'Create Kubernetes clusters in Civo with Pulumi'
+'Create Kubernetes clusters in DigitalOcean with Pulumi'
 
 echo "
-# This script will create a Kubernetes cluster in Civo using Pulumi
+# This script will create a Kubernetes cluster in DigitalOcean using Pulumi
 
 ## Prerequisites
 
@@ -24,25 +24,25 @@ gum confirm "Do you have Pulumi installed?" || exit 0
 echo "
 ## Pulumi Authentication
 
-To create Kubernetes clusters in Civo, you'll need to provide your Pulumi access token. You can generate one by following the instructions here: \`https://www.pulumi.com/docs/pulumi-cloud/access-management/access-tokens/\`.
+To create Kubernetes clusters in DigitalOcean, you'll need to provide your Pulumi access token. You can generate one by following the instructions here: \`https://www.pulumi.com/docs/pulumi-cloud/access-management/access-tokens/\`.
 
 Please enter your Pulumi access token below:
 " | gum format
 
-cd iac/civo-cluster
+cd iac/do-cluster
 rm -f .env
 
 PULUMI_ACCESS_TOKEN=$(gum input --placeholder "Enter Pulumi access token" --value "$PULUMI_ACCESS_TOKEN" --password)
 echo "export PULUMI_ACCESS_TOKEN=$PULUMI_ACCESS_TOKEN" > $(pwd)/.env
 echo ""
 echo "
-## Civo Authentication
+## DigitalOcean Authentication
 
-To create Kubernetes clusters in Civo, you'll need to provide your Civo access token. You can generate one by following the instructions here: \`https://www.civo.com/docs/account/api-keys\` or use the one provided by the workshop organizers.
+To create Kubernetes clusters in DigitalOcean, you'll need to provide your DigitalOcean access token. Use the one provided by the workshop organizers.
 " | gum format
 
-CIVO_TOKEN=$(gum input --placeholder "Civo token" --value "$CIVO_TOKEN" --password)
-echo "export CIVO_TOKEN=$CIVO_TOKEN" >>  $(pwd)/.env
+DIGITALOCEAN_TOKEN=$(gum input --placeholder "DigitalOcean token" --value "$DIGITALOCEAN_TOKEN" --password)
+echo "export DIGITALOCEAN_TOKEN=$DIGITALOCEAN_TOKEN" >>  $(pwd)/.env
 echo ""
 
 source  .env

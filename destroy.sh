@@ -4,10 +4,10 @@ set -e
 
 gum style \
         --foreground 212 --border-foreground 212 --border normal --margin "1 2" --padding "1 2" \
-        'Destroy Kubernetes clusters in Civo with Pulumi'
+        'Destroy Kubernetes clusters in DigitalOcean with Pulumi'
 
 echo "
-# This script will destroy a Kubernetes cluster in Civo using Pulumi
+# This script will destroy a Kubernetes cluster in DigitalOcean using Pulumi
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ You will need following tool installed:
 echo ""
 gum confirm "Do you have Pulumi installed?" || exit 0
 
-#gum style --foreground 212 --width 250 'To delete the Kubernetes clusters in Civo, we need to first login to Pulumi'
+#gum style --foreground 212 --width 250 'To delete the Kubernetes clusters in DigitalOcean, we need to first login to Pulumi'
 #gum confirm "Do you want to login to Pulumi?" && pulumi login || exit 0
 
 echo "
@@ -31,7 +31,7 @@ Do you want to continue?
 echo ""
 gum confirm "Do you want to continue?" || exit 0
 
-cd iac/civo-cluster
+cd iac/do-cluster
 source .env
 
 pulumi stack select dev

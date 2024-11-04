@@ -4,7 +4,7 @@ set -e
 
 rm -f .env
 
-cp iac/civo-cluster/.env .
+cp iac/do-cluster/.env .
 
 source .env
 
@@ -56,23 +56,8 @@ echo "export GITHUB_ORG=$GITHUB_ORG" >>  .env
 
 #cd backstage-demo
 
-#export INGRESS_CLASS=$(kubectl get ingressclasses \
-#    --output jsonpath="{.items[0].metadata.name}")
-#echo "export INGRESS_CLASS=$INGRESS_CLASS" >> .env
-
-#WORKAROUND: Because of an issue with Civo to install Traefik as part of the cluster creation, we need to install it manually
-kubectl apply -f https://raw.githubusercontent.com/civo/kubernetes-marketplace/refs/heads/master/traefik2-loadbalancer/app.yaml
-
-ip=""
-while [ -z $ip ]; do
-  echo "Waiting for external IP"
-  ip=$(kubectl get svc traefik --namespace kube-system --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}")
-  [ -z "$ip" ] && sleep 10
-done
-echo 'Found external IP: '$ip
-
 export INGRESS_HOST=$(\
-    kubectl --namespace kube-system get service traefik \
+    kubectl --namespace default get service nginx-ingress-ingress-nginx-controller \
     --output jsonpath="{.status.loadBalancer.ingress[0].ip}")
 echo "export INGRESS_HOST=$INGRESS_HOST" >> .env
 

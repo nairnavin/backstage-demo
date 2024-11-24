@@ -1,7 +1,7 @@
 # Build Your Developer Platform in 90 Minutes - Backstage + ArgoCD + K8s
 
 This repository contains everything you need to follow along with the "Build Your Developer Platform in 90 Minutes -
-Backstage + ArgoCD + K8s" workshop during [DevOpsDays TLV 2024](https://tlvcommunity.dev/devopsdays/agenda-2024).
+Backstage + ArgoCD + K8s" workshop.
 
 The main goal of this workshop is to show how to build a developer platform using `Backstage`, `ArgoCD`, and
 `Kubernetes` and give you a glimpse of how this tools work and how you can use these tools to build your own developer

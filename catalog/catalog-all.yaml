@@ -3,3 +3,6 @@ kind: Location
 metadata:
   name: backstage-demo
   description: A collection of all Backstage entities for a the Backstage demo
+spec:
+  targets:
+    - ./users-app-component.yaml

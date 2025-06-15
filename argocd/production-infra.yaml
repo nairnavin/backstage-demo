@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/dirien/backstage-demo
+    repoURL: https://github.com/nairnavin/backstage-demo
     targetRevision: HEAD
     path: infra
   destination:

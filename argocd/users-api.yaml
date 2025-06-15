@@ -11,7 +11,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: users-api
-    repoURL: 'https://github.com/dirien/backstage-demo'
+    repoURL: 'https://github.com/nairnavin/backstage-demo'
     targetRevision: main
     directory:
       include: deployment.yaml
